@@ -1,4 +1,6 @@
+@home_screen
 Feature: Tests for Home screen functionality
+  @default
   Scenario: Default values on Home screen is Foot and Centimeter
     Given I land on home screen
     Then Left unit picker value should be "Foot"
@@ -12,6 +14,7 @@ Feature: Tests for Home screen functionality
       Then Show All button should be disabled
       Then Show All button should be undefined
 
+  @conversions
   Scenario Outline: Verify default conversion
     Given I land on home screen
     When I type "<target>" to target text field
