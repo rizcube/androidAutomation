@@ -19,3 +19,12 @@ end
 When('I press on Clear button') do
   log("clear button is pressed")
 end
+
+
+When(/^I type "([^"]*)" to target text field$/) do |target|
+  log("targ is #{target}")
+end
+
+Then(/^I should see result as "([^"]*)"$/) do |result|
+  log("result is #{result}")
+end
