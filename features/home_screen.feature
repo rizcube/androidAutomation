@@ -10,3 +10,4 @@ Feature: Tests for Home screen functionality
       Then Show All button should be enabled
       When I press on Clear button
       Then Show All button should be disabled
+      Then Show All button should be undefined
