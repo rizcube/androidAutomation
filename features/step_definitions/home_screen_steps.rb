@@ -7,7 +7,7 @@ Then('Right unit picker value should be {string}') do |value|
 end
 
 Then(/^Show All button should be (enabled|disabled)$/) do |state|
-  log("button is enabled")
+  log(state)
 end
 
 When('I press on Clear button') do
