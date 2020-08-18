@@ -1,4 +1,7 @@
 require "appium_lib"
+require 'test/unit/assertions'
+
+
 def caps
   {
   caps: {

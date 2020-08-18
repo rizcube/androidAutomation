@@ -13,17 +13,18 @@ Feature: Tests for Home screen functionality
       Then Show All button should be disabled
       Then Show All button should be undefined
 
-
+  @conversions @wip
   Scenario Outline: Verify default conversion
     Given I land on home screen
     When I type "<target>" to target text field
     Then I should see result as "<result>"
     Examples:
-      | target |result |
-      | 1      | 12    |
-      | 2      | 24    |
-      | 3      | 12    |
-      | 9      | 108    |
+      | target   |result    |
+      | 1        | 30.48    |
+      | 2        | 60.96    |
+      | 3        | 91.44    |
+      | 9        | 274.32   |
+      |1011      | 30 815.28 |
 
   Scenario:
     User able to add current conversion to favourites list
@@ -31,4 +32,15 @@ Feature: Tests for Home screen functionality
     Then I press on Add to Favorites icon
     When I press on menu icon
     Then I press on Favorite conversions
-    Then I verify "Length" to Favourite conversions list
+    Then I verify "Power" to Favourite conversions list
+
+  @searchConversion
+  Scenario:
+      User able to search by using existing conversion type
+      Given I land on home screen
+      Then I press on search icon
+      Then I type "Temperature" in search field
+      And I press return button on soft keyboard
+      Then I verify "Temperature" as a current unit converter
+      Then Left unit picker value should be "Celsius"
+      And Right unit picker value should be "Fahrenheit"

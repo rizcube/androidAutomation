@@ -3,11 +3,13 @@ Then('I press on Create your first conversion') do
 end
 
 Then('I type {string} as custom conversion name') do |conversion_name|
-  find_element(xpath: "//*[contains(@text, #{conversion_name})]")
+  find_element(id: "select_unit_spinner").text
+  #find_element(xpath: "//*[contains(@text, #{conversion_name})]")
 end
 
 When('I press on New unit button') do
   find_element(id: "btn_new_custom_unit").click
+  #find_element(xpath: "//*[contains(@text, 'NEW UNIT')]").click
   sleep 3
 end
 
@@ -26,6 +28,11 @@ end
 Then('I press submit checkmark on Custom conversions screen') do
   find_element(id: "action_confirm_custom_unit").click
 end
+
+When('I press on OK button') do
+  find_element(id: "btn_custom_conversion_details_ok").click
+end
+
 
 Then('I verify {string} added to Custom conversions list') do |conversion_name|
   find_element(xpath: "//*[contains(@text, #{conversion_name})]")
