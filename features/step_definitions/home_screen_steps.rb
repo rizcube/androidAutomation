@@ -35,22 +35,6 @@ When(/^I type "([^"]*)" on the application keyboard$/) do |target|
   end
 end
 
-# if actual_target_value !=  target
-#   fail("Expected unit picker value is #{target}, actual value is #{actual_target_value}")
-# end
-
-# array_btn_row_3 = find_elements(id: "buttons_row_3")
-# selected_btn = array_btn_row_3[0].text
-# log("hi")
-# log(selected_btn)
-
-# text(target).click
-# btn_pressed = Appium::TouchAction.new.tap(x:184,y:814, count: 5).perform
-# log("btn value should be 2")
-# log(btn_pressed)
-# sleep 3
-# log(target)
-
 Then(/^I should see result as "([^"]*)"$/) do |result|
   log(result)
   actual_result_value = find_element(id: "target_value").text
@@ -59,9 +43,7 @@ Then(/^I should see result as "([^"]*)"$/) do |result|
   if actual_result_value != result
     fail("Expected result value is #{result} , actual value is #{actual_result_value}")
   end
-  # find_element(xpath: "//*[contains(@text, #{result})]")
-  # actual_target_value = find_element(id: "target_value").text
-  # log(actual_target_value)
+
 end
 
 Then('I press on Add to Favorites icon') do
@@ -73,7 +55,11 @@ Then('I press on Favorite conversions') do
 end
 
 Then('I verify {string} to Favourite conversions list') do |unit_type|
-  find_element(xpath: "//*[contains(@text, #{unit_type})]")
+  #find_element(xpath: "//*[contains(@text, #{unit_type})]")
+  log(unit_type)
+  actual_unit_type = find_element(id: "favorites_item_hint").text
+  raise("found #{actual_unit_type} in the Favourite conversions list, it should be #{unit_type}") if actual_unit_type != unit_type
+
 end
 
 Then('I press on search icon') do

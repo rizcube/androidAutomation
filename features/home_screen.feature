@@ -6,7 +6,7 @@ Feature: Tests for Home screen functionality
     Then Left unit picker value should be "Foot"
     And Right unit picker value should be "Centimeter"
 
-    @wip
+
     Scenario: Show All button should be enabled at launch
       Given I land on home screen
       Then Show All button should be disabled
@@ -33,9 +33,9 @@ Feature: Tests for Home screen functionality
     Then I press on Add to Favorites icon
     When I press on menu icon
     Then I press on Favorite conversions
-    Then I verify "Power" to Favourite conversions list
+    Then I verify "Length" to Favourite conversions list
 
-  @searchConversion
+  @searchConversion @wip
   Scenario:
       User able to search by using existing conversion type
       Given I land on home screen
