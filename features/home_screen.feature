@@ -6,17 +6,18 @@ Feature: Tests for Home screen functionality
     Then Left unit picker value should be "Foot"
     And Right unit picker value should be "Centimeter"
 
+    @wip
     Scenario: Show All button should be enabled at launch
       Given I land on home screen
-      Then Show All button should be enabled
-      When I press on Clear button
       Then Show All button should be disabled
-      Then Show All button should be undefined
+      When I type "1" on the application keyboard
+      Then Show All button should be enabled
 
-  @conversions @wip
+
+  @conversions
   Scenario Outline: Verify default conversion
     Given I land on home screen
-    When I type "<target>" to target text field
+    When I type "<target>" on the application keyboard
     Then I should see result as "<result>"
     Examples:
       | target   |result    |
