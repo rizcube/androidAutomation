@@ -33,9 +33,9 @@ Feature: Tests for Home screen functionality
     Then I press on Add to Favorites icon
     When I press on menu icon
     Then I press on Favorite conversions
-    Then I verify "Length" to Favourite conversions list
+    Then I verify "temp" to Favourite conversions list
 
-  @searchConversion @wip
+  @searchConversion
   Scenario:
       User able to search by using existing conversion type
       Given I land on home screen
@@ -45,3 +45,14 @@ Feature: Tests for Home screen functionality
       Then I verify "Temperature" as a current unit converter
       Then Left unit picker value should be "Celsius"
       And Right unit picker value should be "Fahrenheit"
+@wip
+Scenario Outline:
+  User able to select values from unit pickers
+  Given I land on home screen
+  Then I select "<unit_type>" from left unit picker
+  When I type "<amount>" on the application keyboard
+  Then I should see result as "<result>"
+  Examples:
+    |unit_type  | amount | result |
+    #| Inch      |   1    | 2.54   |
+    | Link      |   1    |20.1168 |

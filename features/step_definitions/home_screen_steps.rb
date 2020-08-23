@@ -78,3 +78,22 @@ end
 Then('I verify {string} as a current unit converter') do |current_unit|
   find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']")
 end
+
+
+Then(/^I select "([^"]*)" from left unit picker$/) do |value|
+  log(value)
+  left_picker_value = find_elements(id: 'select_unit_spinner')[0].click
+  sleep 2
+  checkValue = find_element(xpath: "//android.widget.TextView[@text='#{value}']").text
+  log("after x path")
+  log(checkValue)
+  sleep(3)
+  checkValue[0].text
+     #3.times { Appium::TouchAction.swipe(start_x: 0.5, start_y: 0.2, offset_x: 0.5, offset_y: 0.8, duration: 500).perform }
+     #until exists{ value } do
+    #log("found #{value}")
+    #Appium::TouchAction.swipe(start_x: 0.5, start_y: 0.2, offset_x: 0.5, offset_y: 0.8, duration: 500).perform
+    #end
+
+    #Appium::TouchAction.swipe(start_x: 75, start_y: 500, offset_x: 75, offset_y: 20, duration: 500).perform
+end
