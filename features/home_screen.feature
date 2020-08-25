@@ -45,7 +45,7 @@ Feature: Tests for Home screen functionality
       Then I verify "Temperature" as a current unit converter
       Then Left unit picker value should be "Celsius"
       And Right unit picker value should be "Fahrenheit"
-@wip
+  @wip
 Scenario Outline:
   User able to select values from unit pickers
   Given I land on home screen
@@ -54,5 +54,25 @@ Scenario Outline:
   Then I should see result as "<result>"
   Examples:
     |unit_type  | amount | result |
-    #| Inch      |   1    | 2.54   |
+    | Inch      |   1    | 2.54   |
     | Link      |   1    |20.1168 |
+    |[Hist.rus.] Mezhevaya verst | 1 | 213 360 |
+
+
+  #Scenario: User able to convert values
+    #Given I land on home screen
+   # When I press on menu icon
+    #Then I select "volume" from left unit picker
+   # Then I select "Cup" from right unit picker
+   # When I type "1" on application keyboard
+    #Then I should see result as "15.1416"
+
+  Scenario: User able to switch values
+    Given I land on home screen
+    Then Left unit picker value should be "Foot"
+    And Right unit picker value should be "Centimeter"
+    When I press on switch units button
+    Then Left unit picker value should be "Centimeter"
+    And Right unit picker value should be "Foot"
+
+

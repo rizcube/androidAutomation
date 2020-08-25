@@ -2,12 +2,14 @@ Then('Left unit picker value should be {string}') do |unit_value|
   log(unit_value)
   array_of_elements = find_elements(id: "select_unit_spinner")
   actual_picker_text = array_of_elements[0].text
-  if actual_picker_text != unit_value
-    fail("Expected unit picker value is #{unit_value}, actual value is #{actual_picker_text}")
-  end
+  raise("Expected unit picker value is  #{unit_value} , Actual picker text is #{actual_picker_text}") if actual_picker_text != unit_value
+  #if actual_picker_text != unit_value
+  # fail("Expected unit picker value is #{unit_value}, actual value is #{actual_picker_text}")
+  #end
 end
 
 Then('Right unit picker value should be {string}') do |unit_value|
+  log(unit_value)
   array_of_elements = find_elements(:id, "select_unit_spinner")
   actual_picker_text = array_of_elements[1].text
   if actual_picker_text != unit_value
@@ -83,17 +85,24 @@ end
 Then(/^I select "([^"]*)" from left unit picker$/) do |value|
   log(value)
   left_picker_value = find_elements(id: 'select_unit_spinner')[0].click
-  sleep 2
-  checkValue = find_element(xpath: "//android.widget.TextView[@text='#{value}']").text
-  log("after x path")
-  log(checkValue)
-  sleep(3)
-  checkValue[0].text
-     #3.times { Appium::TouchAction.swipe(start_x: 0.5, start_y: 0.2, offset_x: 0.5, offset_y: 0.8, duration: 500).perform }
-     #until exists{ value } do
-    #log("found #{value}")
-    #Appium::TouchAction.swipe(start_x: 0.5, start_y: 0.2, offset_x: 0.5, offset_y: 0.8, duration: 500).perform
-    #end
+  sleep 5
+  3.times { Appium:: TouchAction.new.swipe(start_x:0.5, start_y: 0.2, end_x: 0.5, end_y: 0.8, duration: 600).perform }
 
-    #Appium::TouchAction.swipe(start_x: 75, start_y: 500, offset_x: 75, offset_y: 20, duration: 500).perform
+  until exists {find_element(xpath: "//android.widget.TextView[@text='#{value}']")} do
+    sleep 3
+     Appium:: TouchAction.new.swipe(start_x:0.5, start_y: 0.8, end_x: 0.5, end_y: 0.2, duration: 600).perform
+  end
+  find_element(xpath: "//android.widget.TextView[@text='#{value}']").click
+end
+
+
+Then('left Unit picker value should be {string}') do |unit_text|
+  array_of_elements = find_elements(id: "select_unit_spinner")
+  actual_unit_text = array_of_elements[0].click
+  log(actual_unit_text)
+
+end
+
+When('I press on switch units button') do
+  find_element(id: "img_switch").click
 end

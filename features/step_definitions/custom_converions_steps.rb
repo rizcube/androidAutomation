@@ -8,6 +8,7 @@ Then('I type {string} as custom conversion name') do |conversion_name|
 end
 
 When('I press on New unit button') do
+  sleep 3
   find_element(id: "btn_new_custom_unit").click
   #find_element(xpath: "//*[contains(@text, 'NEW UNIT')]").click
   sleep 3
