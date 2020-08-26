@@ -85,14 +85,7 @@ end
 Then(/^I select "([^"]*)" from left unit picker$/) do |value|
   log(value)
   left_picker_value = find_elements(id: 'select_unit_spinner')[0].click
-  sleep 5
-  3.times { Appium:: TouchAction.new.swipe(start_x:0.5, start_y: 0.2, end_x: 0.5, end_y: 0.8, duration: 600).perform }
-
-  until exists {find_element(xpath: "//android.widget.TextView[@text='#{value}']")} do
-    sleep 3
-     Appium:: TouchAction.new.swipe(start_x:0.5, start_y: 0.8, end_x: 0.5, end_y: 0.2, duration: 600).perform
-  end
-  find_element(xpath: "//android.widget.TextView[@text='#{value}']").click
+  find_in_list(value)
 end
 
 
@@ -106,3 +99,15 @@ end
 When('I press on switch units button') do
   find_element(id: "img_switch").click
 end
+
+Then(/^I select "([^"]*)" from menu$/) do |value|
+  log(value)
+  find_element(xpath: "//android.widget.TextView[@text='#{value}']").click
+end
+
+Then(/^I select "([^"]*)" from the right unit picker$/) do |value|
+  log(value)
+  left_picker_value = find_elements(id: 'select_unit_spinner')[1].click
+  find_in_list(value)
+end
+

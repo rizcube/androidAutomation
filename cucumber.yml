@@ -1,0 +1,7 @@
+custom: -t @custom_conversions --format html --out report.html --format pretty
+home: -t @home_screen
+main: -t @main_menu
+
+any: -t '@home_screen or @main_menu'
+
+strict: -t @home_screen -t @main_menu

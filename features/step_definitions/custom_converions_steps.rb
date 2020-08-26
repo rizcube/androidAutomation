@@ -3,7 +3,7 @@ Then('I press on Create your first conversion') do
 end
 
 Then('I type {string} as custom conversion name') do |conversion_name|
-  find_element(id: "select_unit_spinner").text
+  find_element(id: "select_unit_spinner").send_keys(conversion_name)
   #find_element(xpath: "//*[contains(@text, #{conversion_name})]")
 end
 
