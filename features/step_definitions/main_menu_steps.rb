@@ -1,5 +1,4 @@
 Given('I land on home screen') do
-
   find_element(id: "action_bar").find_element(id:"action_search")
   find_element(id:"action_add_favorites")
 end
