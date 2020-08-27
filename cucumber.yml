@@ -1,7 +1,13 @@
-custom: -t @custom_conversions --format html --out report.html --format pretty
-home: -t @home_screen
-main: -t @main_menu
+custom: -t @custom_conversions --format html --out report_custom_conversions.html --format pretty
+home: -t @home_screen --format html --out report_home_screen.html --format pretty
+main: -t @main_menu --format html --out report_main_menu.html --format pretty
 
-any: -t '@home_screen or @main_menu'
+any: -t @custom_conversions -t @home_screen
 
-strict: -t @home_screen -t @main_menu
+strict: -t @main_menu -t @default
+
+
+#Any scenarios marked with @home_screen And @conversions tags
+#@home_screen, @conversions
+
+# --format html --out report.html --format pretty

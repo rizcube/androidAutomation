@@ -3,7 +3,6 @@ Feature: Tests for Home screen functionality
   Background:
     Given I land on home screen
 
-  @default
   Scenario: Default values on Home screen is Foot and Centimeter
     Given I land on home screen
     Then Left unit picker value should be "Foot"
@@ -14,7 +13,7 @@ Feature: Tests for Home screen functionality
     When I type "1" on the application keyboard
     Then Show All button should be enabled
 
-  @conversions
+
   Scenario Outline: Verify default conversion
     When I type "<target>" on the application keyboard
     Then I should see result as "<result>"
@@ -31,7 +30,7 @@ Feature: Tests for Home screen functionality
     Then I press on Add to Favorites icon
     When I press on menu icon
     Then I press on Favorite conversions
-    Then I verify "temp" to Favourite conversions list
+    Then I verify "Length" to Favourite conversions list
 
   Scenario:
       User able to search by using existing conversion type
@@ -49,7 +48,6 @@ Feature: Tests for Home screen functionality
     Then I should see result as "<result>"
     Examples:
       |unit_type  | amount | result |
-      | KK        | 1      |122     |
       | Inch      |   1    | 2.54   |
       | Link      |   1    |20.1168 |
       |[Hist.rus.] Mezhevaya verst | 1 | 213 360 |
