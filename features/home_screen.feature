@@ -13,13 +13,12 @@ Feature: Tests for Home screen functionality
     When I type "1" on the application keyboard
     Then Show All button should be enabled
 
- @wip
   Scenario Outline: Verify default conversion
     When I type "<target>" on the application keyboard
     Then I should see result as "<result>"
     Examples:
       | target   |result    |
-      | 1        | 30.00    |
+      | 1        | 30.48    |
       | 2        | 60.96    |
       | 3        | 91.44    |
       | 9        | 274.32   |
@@ -62,12 +61,30 @@ Feature: Tests for Home screen functionality
       | target | result  |
       | 1      | 15.1416 |
 
-
   Scenario: User able to switch values
     Then Left unit picker value should be "Foot"
     And Right unit picker value should be "Centimeter"
     When I press on switch units button
     Then Left unit picker value should be "Centimeter"
     And Right unit picker value should be "Foot"
+
+  Scenario: User able to cleanup history
+    When I press on menu icon
+    Then I select "History" from menu
+    Then I should see text "No history right now"
+    Then I verify "History" as a current unit converter
+    When I press on menu icon
+    Then I select "Length" from menu
+    Then I land on home screen
+    When I type "1" on the application keyboard
+    Then I press on menu icon
+    Then I select "History" from menu
+    And I verify that 1st result in history list is "Length"
+    When I press delete from history at 1st row
+    Then I should see text "No history right now"
+
+
+
+
 
 

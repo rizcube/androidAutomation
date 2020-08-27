@@ -78,7 +78,7 @@ Then('I press return button on soft keyboard') do
 end
 
 Then('I verify {string} as a current unit converter') do |current_unit|
-  find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']")
+  find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']")
 end
 
 
@@ -111,3 +111,29 @@ Then(/^I select "([^"]*)" from the right unit picker$/) do |value|
   find_in_list(value)
 end
 
+Then('I should see text {string}') do |string|
+  message = find_element(id: "text_info_history").text
+  log(message)
+end
+
+When('I press {string} on the keypad') do |string|
+  log(string)
+end
+
+And(/^I verify that (\d+)(?:st|nd|rd|th)? result in history list is "([^"]*)"$/) do |index, text|
+  parent_element = find_element(id: "history_conversion_list")
+  array_of_elements = parent_element.find_elements(id: "history_single_line")
+  log(parent_element)
+  actual_text = array_of_elements[index.to_i - 1].find_element(id: "history_item_hint").text
+  if actual_text != text
+    raise("Expected text is #{text}, actual text is #{actual_text}")
+  end
+end
+
+When(/^I press delete from history at (\d+)st row$/ )do |index|
+  parent_element = find_element(id: "history_single_line")
+  array_of_elements = parent_element.find_elements(id: "history_single_line")
+  sleep 5
+  icon = array_of_elements[index.to_i - 1].find_element(id: "deleteIcon").click
+  log(icon)
+end

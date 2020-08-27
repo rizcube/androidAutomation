@@ -19,3 +19,8 @@ After do |scenario|
   sleep 3
   $driver.driver_quit
 end
+
+#
+AfterConfiguration do
+  FileUtils.rm_r("screenshots") if File.directory?("screenshots")
+end
