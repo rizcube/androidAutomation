@@ -34,7 +34,9 @@ Then('I press submit checkmark on Custom conversions screen') do
 end
 
 When('I press on OK button') do
+  sleep 2
   find_element(id: "btn_custom_conversion_details_ok").click
+  sleep 1
 end
 
 Then('I verify {string} added to Custom conversions list') do |conversion_name|

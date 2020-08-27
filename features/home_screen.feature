@@ -13,13 +13,13 @@ Feature: Tests for Home screen functionality
     When I type "1" on the application keyboard
     Then Show All button should be enabled
 
-
+ @wip
   Scenario Outline: Verify default conversion
     When I type "<target>" on the application keyboard
     Then I should see result as "<result>"
     Examples:
       | target   |result    |
-      | 1        | 30.48    |
+      | 1        | 30.00    |
       | 2        | 60.96    |
       | 3        | 91.44    |
       | 9        | 274.32   |

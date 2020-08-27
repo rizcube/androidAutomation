@@ -2,8 +2,9 @@ custom: -t @custom_conversions --format html --out report_custom_conversions.htm
 home: -t @home_screen --format html --out report_home_screen.html --format pretty
 main: -t @main_menu --format html --out report_main_menu.html --format pretty
 
-any: -t @custom_conversions -t @home_screen
+any: -t @custom_conversions -t @home_screen -t  @main_menu
 
+screenshot: -t @wip
 strict: -t @main_menu -t @default
 
 
