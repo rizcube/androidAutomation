@@ -13,7 +13,7 @@ After do |scenario|
     screenshot_name = time_stamp + ".png"
     screenshot_file = File.join("screenshots", screenshot_name)
     $driver.screenshot(screenshot_file)
-    embed("#{screenshot_file}", "image/png" )
+    attach("#{screenshot_file}", "image/png" )
 
   end
   sleep 3
