@@ -13,6 +13,7 @@ Feature: Tests for Home screen functionality
     When I type "1" on the application keyboard
     Then Show All button should be enabled
 
+
   Scenario Outline: Verify default conversion
     When I type "<target>" on the application keyboard
     Then I should see result as "<result>"
@@ -30,7 +31,7 @@ Feature: Tests for Home screen functionality
     When I press on menu icon
     Then I press on Favorite conversions
     Then I verify "Length" to Favourite conversions list
-
+@wip
   Scenario:
       User able to search by using existing conversion type
       Then I press on search icon

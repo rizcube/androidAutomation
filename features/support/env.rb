@@ -1,5 +1,6 @@
 require "appium_lib"
 require 'test/unit/assertions'
+require "pry"
 
 
 def caps
@@ -19,6 +20,7 @@ Appium.promote_appium_methods Object
 
 
 def find_in_list(value)
+
   sleep 5
   3.times { Appium:: TouchAction.new.swipe(start_x:0.5, start_y: 0.2, end_x: 0.5, end_y: 0.8, duration: 600).perform }
 

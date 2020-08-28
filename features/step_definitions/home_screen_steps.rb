@@ -57,6 +57,7 @@ Then('I press on Favorite conversions') do
 end
 
 Then('I verify {string} to Favourite conversions list') do |unit_type|
+
   #find_element(xpath: "//*[contains(@text, #{unit_type})]")
   log(unit_type)
   actual_unit_type = find_element(id: "favorites_item_hint").text
@@ -78,6 +79,7 @@ Then('I press return button on soft keyboard') do
 end
 
 Then('I verify {string} as a current unit converter') do |current_unit|
+
   find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']")
 end
 
