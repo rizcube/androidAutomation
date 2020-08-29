@@ -3,12 +3,14 @@ Then('Left unit picker value should be {string}') do |unit_value|
   array_of_elements = find_elements(id: "select_unit_spinner")
   actual_picker_text = array_of_elements[0].text
   raise("Expected unit picker value is  #{unit_value} , Actual picker text is #{actual_picker_text}") if actual_picker_text != unit_value
+  sleep 2
   #if actual_picker_text != unit_value
   # fail("Expected unit picker value is #{unit_value}, actual value is #{actual_picker_text}")
   #end
 end
 
 Then('Right unit picker value should be {string}') do |unit_value|
+  sleep 2
   log(unit_value)
   array_of_elements = find_elements(:id, "select_unit_spinner")
   actual_picker_text = array_of_elements[1].text
@@ -79,8 +81,8 @@ Then('I press return button on soft keyboard') do
 end
 
 Then('I verify {string} as a current unit converter') do |current_unit|
-
-  find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']")
+  sleep 4
+  find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='#{current_unit}']").text
 end
 
 

@@ -31,7 +31,7 @@ Feature: Tests for Home screen functionality
     When I press on menu icon
     Then I press on Favorite conversions
     Then I verify "Length" to Favourite conversions list
-@wip
+
   Scenario:
       User able to search by using existing conversion type
       Then I press on search icon
@@ -69,11 +69,11 @@ Feature: Tests for Home screen functionality
     Then Left unit picker value should be "Centimeter"
     And Right unit picker value should be "Foot"
 
+
   Scenario: User able to cleanup history
     When I press on menu icon
     Then I select "History" from menu
     Then I should see text "No history right now"
-    Then I verify "History" as a current unit converter
     When I press on menu icon
     Then I select "Length" from menu
     Then I land on home screen
