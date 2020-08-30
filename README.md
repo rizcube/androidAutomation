@@ -16,17 +16,17 @@ For this project I used
 
 
 ### Unit Converter Android app
-[ Screenshot of the Unit Converter App:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/UnitConverterApp_screenshot_2.png)
+![ Screenshot of the Unit Converter App:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/UnitConverterApp_screenshot_2.png)
 
 ### Main screen based tests
-[ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_main.png)
+![ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_main.png)
 
 ### Custom Conversions tests
-[ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_custom_conversions.png)
+![ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_custom_conversions.png)
 
 ### Gestures based tests
-[ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_Gestures.png)
+![ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_Gestures.png)
 
 ### Home Screen tests
-[ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_Home_screen.rtf)
+![ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_Home_screen.rtf)
 
