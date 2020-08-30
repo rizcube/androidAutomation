@@ -16,7 +16,7 @@ For this project I used
 
 
 ### Unit Converter Android app
-![ Screenshot of the Unit Converter App:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/UnitConverterApp_screenshot_2.png)
+![ Screenshot of the Unit Converter App:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/UnitConverterApp_screenshot_3.png)
 
 ### Main screen based tests
 ![ Screenshot of the Main screen Features:  ](https://github.com/rizcube/androidAutomation/blob/workbranch/Jenkins_main.png)
